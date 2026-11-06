@@ -53,9 +53,35 @@
 <section class="section" style="padding-top:0">
   <div class="wrap fiche">
     <div class="fiche-main">
-      <div class="fiche-block" id="contexte"><span class="kicker">Avant-match</span><h2>Contexte et problématique</h2><p>Une RIA (Rich Internet Application) est une application web riche, qui se comporte comme un logiciel installé. Les évaluer demande de regarder à la fois le code, les performances et l'expérience utilisateur, ce qui prend du temps à un développeur.</p><p>J'ai voulu construire un assistant capable de faire un premier diagnostic et de l'expliquer en langage clair, pour une personne technique ou non.</p><p class="problem">Comment utiliser un modèle de langage pour produire une évaluation utile et fiable d'une application web, sans en faire une boîte noire ?</p></div>
-      <div class="fiche-block" id="objectifs"><span class="kicker">Le plan de jeu</span><h2>Objectifs</h2><ul class="objectives"><li>Intégrer une API de modèle de langage dans une vraie application</li><li>Structurer une analyse en critères mesurables</li><li>Générer un rapport exploitable en équipe</li><li>Mettre l'application en ligne</li></ul></div>
-      <div class="fiche-block" id="missions"><span class="kicker">Mon poste</span><h2>Missions principales</h2><ul class="missions"><li>Concevoir le prompt système et la grille d'évaluation (architecture, performances, accessibilité, sécurité, UX)</li><li>Développer le serveur Flask et ses routes de conversation et de rapport</li><li>Récupérer et résumer le contenu de la page analysée avant de l'envoyer au modèle</li><li>Créer l'interface de chat côté navigateur</li><li>Générer le rapport PDF et déployer l'application sur Render</li></ul></div>
+      <div class="fiche-block" id="contexte">
+        <span class="kicker">Avant-match</span>
+        <h2>Contexte et problématique</h2>
+        <p>Pendant mon stage chez Openscop, j'ai découvert les tests automatisés : des scripts qui vérifient une application à la place d'un humain. J'ai voulu reprendre cette compétence dans un projet personnel, complet et public, que je peux montrer et faire évoluer.</p>
+        <p>J'ai choisi <strong>Saucedemo</strong>, une boutique en ligne de démonstration conçue pour s'entraîner aux tests. Mon robot y réalise seul un parcours d'achat complet, de la connexion à la déconnexion, en vérifiant chaque étape.</p>
+        <p class="problem">Comment s'assurer, à chaque modification d'un site, que le parcours d'achat fonctionne toujours, sans tout revérifier à la main ?</p>
+      </div>
+      <div class="fiche-block" id="objectifs">
+        <span class="kicker">Le plan de jeu</span>
+        <h2>Objectifs</h2>
+        <ul class="objectives">
+          <li>Automatiser un parcours d'achat complet, de bout en bout</li>
+          <li>Vérifier chaque étape avec des contrôles précis</li>
+          <li>Rendre le test fiable, même quand une page charge lentement</li>
+          <li>Lancer le test automatiquement à chaque modification du code</li>
+        </ul>
+      </div>
+      <div class="fiche-block" id="missions">
+        <span class="kicker">Mon poste</span>
+        <h2>Missions principales</h2>
+        <ul class="missions">
+          <li>Écrire le script en Python avec <strong>Selenium WebDriver</strong> : connexion, tri des produits, ajout au panier, commande et déconnexion</li>
+          <li>Programmer <strong>11 vérifications</strong>, dont le recalcul du total de la commande pour le comparer à celui affiché par le site</li>
+          <li>Utiliser des <strong>attentes explicites</strong> (WebDriverWait) plutôt que des pauses fixes</li>
+          <li>Gérer les erreurs : capture d'écran automatique et code de sortie en cas d'échec</li>
+          <li>Mettre en place l'<strong>intégration continue</strong> avec GitHub Actions, en mode sans interface (headless)</li>
+          <li>Documenter le projet dans un README</li>
+        </ul>
+      </div>
       <div class="fiche-block" id="etapes"><span class="kicker">Le déroulé</span><h2>Étapes clés</h2><ol class="steps"><li><h3>Cadrage</h3><p>Choix des critères d'évaluation et du format de réponse attendu, pour que chaque analyse suive la même grille.</p></li><li><h3>Serveur et API</h3><p>Routes Flask, appel au modèle de langage, clé d'API stockée dans une variable d'environnement côté serveur.</p></li><li><h3>Interface de chat</h3><p>Page HTML, CSS et JavaScript : envoi des messages, affichage des réponses, état de chargement.</p></li><li><h3>Rapport PDF</h3><p>Mise en forme des résultats par critère avec une recommandation prioritaire, téléchargeable en un clic.</p></li><li><h3>Déploiement et essais</h3><p>Mise en ligne sur Render, essais sur plusieurs sites et ajustement du prompt quand les réponses étaient trop vagues.</p></li></ol></div>
       <div class="fiche-block" id="competences"><span class="kicker">Ce que j'ai mobilisé</span><h2>Compétences</h2><div class="skills-3"><div><h3>Techniques</h3><ul><li>Python et Flask</li><li>Intégration d'une API d'IA</li><li>Conception de prompts</li><li>Front-end HTML, CSS, JavaScript</li><li>Déploiement cloud</li></ul></div><div><h3>Transversales</h3><ul><li>Veille sur les outils d'IA</li><li>Esprit critique face aux réponses d'un modèle</li><li>Vulgarisation technique</li></ul></div><div><h3>Humaines</h3><ul><li>Curiosité</li><li>Autonomie</li><li>Persévérance</li><li>Prise d'initiative</li></ul></div></div></div>
       <div class="fiche-block" id="outils"><span class="kicker">L'équipement</span><h2>Outils utilisés</h2><ul class="tools"><li><b>Python 3</b><span>Langage serveur</span></li><li><b>Flask</b><span>Micro-framework web</span></li><li><b>API OpenAI</b><span>Modèle de langage</span></li><li><b>HTML · CSS · JS</b><span>Interface de chat</span></li><li><b>Render</b><span>Hébergement</span></li><li><b>Git · GitHub</b><span>Versionnement</span></li></ul></div>
@@ -101,12 +127,12 @@
         </div>
       </div>
       <div class="fiche-block" id="bilan"><span class="kicker">Analyse d'après-match</span><h2>Bilan réflexif</h2><div class="debrief"><div class="debrief-grid"><div><h3>Ce que j'ai appris</h3><p>Un modèle de langage est un composant comme un autre : il faut encadrer ses entrées, vérifier ses sorties et prévoir le cas où il se trompe.</p></div><div><h3>Difficulté et solution</h3><p>Les premières évaluations étaient trop générales. J'ai imposé une grille de critères et un format de réponse précis dans le prompt système, ce qui a rendu les rapports comparables.</p></div><div><h3>Pour aller plus loin</h3><p>Croiser l'avis du modèle avec des mesures objectives (Lighthouse, validateur W3C) et ajouter un historique des analyses.</p></div></div><p class="problem" style="font-style:normal">Ce projet confirme mon orientation vers le développement IA : j'aime relier un modèle de langage à un besoin concret et en faire un outil que d'autres peuvent utiliser.</p></div>
-        <div class="btn-row"><a class="btn btn--primary" href="https://ria-check-go.onrender.com" target="_blank" rel="noopener noreferrer">Tester l'application <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a><a class="btn btn--ghost" href="../projets.html">Tous les projets</a></div>
+        <div class="btn-row"><a class="btn btn--primary" href="https://github.com/Okpsaihtam/robot-selenium" target="_blank" rel="noopener noreferrer">Voir le code sur GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a><a class="btn btn--ghost" href="../projets.html">Tous les projets</a></div>
       </div>
       <nav class="project-nav" aria-label="Autres projets"><a href="chatbot-ria.html"><small>Projet précédent</small><strong>Chatbot RIA</strong></a><a href="api-citations.html"><small>Projet suivant</small><strong>API Citations</strong></a></nav>
     </div>
     <aside class="aside" aria-label="Sommaire et lien du projet">
-      <div class="aside-box"><h2>Projet finalisé</h2><a class="btn btn--primary" href="https://ria-check-go.onrender.com" target="_blank" rel="noopener noreferrer">Tester l'application <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a></div>
+      <div class="aside-box"><h2>Projet finalisé</h2><a class="btn btn--primary" href="https://github.com/Okpsaihtam/robot-selenium" target="_blank" rel="noopener noreferrer">Voir le code sur GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a></div>
       <div class="aside-box toc-box"><h2>Sommaire</h2><ol class="toc"><li><a href="#contexte">Contexte</a></li><li><a href="#objectifs">Objectifs</a></li><li><a href="#missions">Missions</a></li><li><a href="#etapes">Étapes</a></li><li><a href="#competences">Compétences</a></li><li><a href="#outils">Outils</a></li><li><a href="#apports">Apports académiques</a></li><li><a href="#responsable">Numérique responsable</a></li><li><a href="#illustrations">Illustrations</a></li><li><a href="#bilan">Bilan réflexif</a></li></ol></div>
       <div class="aside-box"><h2>Technologies</h2><ul class="chips"><li>Python</li><li>Flask</li><li>API OpenAI</li><li>PDF</li></ul></div>
     </aside>
